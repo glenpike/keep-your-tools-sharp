@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Your deck.js Presentation</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="deck.js/core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="deck.js/extensions/scale/deck.scale.css">
+
+  <link rel="stylesheet" media="screen" href="deck.ext.js/extensions/notes/deck.notes.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <!--<link rel="stylesheet" media="screen" href="deck.js/themes/style/web-2.0.css">
+  <link rel="stylesheet" media="screen" href="deck.js/themes/style/swiss.css">-->
+  <link rel="stylesheet" media="screen" href="deck.js/themes/style/neon.css">
+  <style>
+    .contrast-text {
+        color: #fff !important;
+        text-shadow: 0 0 50px #151515, 0 0 3px #15c4cb;
+    }
+
+    .fade-bg-image {
+        background-size:cover
+    }
+
+    .tool-wall {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://s-media-cache-ak0.pinimg.com/originals/9a/92/25/9a922590827f0971e8cc528f859f3300.jpg);
+    }
+    .duct-tape {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://static.wixstatic.com/media/8f3b48_c4b5a7cf31dc44dd9799c7e2a8831905.jpg);
+    }
+    .pencils {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://drawingsware.net/wp-content/uploads/2016/09/conte-sketching-pencils-how-to-sharpen-a-pencil-like-a-boss.jpg);
+    }
+    .codemod {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('./images/codemod.png');
+    }
+    .monkey {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(https://tctechcrunch2011.files.wordpress.com/2016/08/gettyimages-172780144.jpg);
+    }
+
+    .moneygrabber {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('./images/money-grabber.png');
+    }
+    .robotic_theatre {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./images/robotic-theatre.jpg');
+    }
+    .robothespian {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/robothespian.jpg');
+    }
+    .typing {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://ilikeinterfaces.files.wordpress.com/2015/02/00_45_5700244.png);
+    }
+    .crouching {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://images1.fanpop.com/images/photos/1700000/Crouching-Tiger-Hidden-Dragon-Screencap-crouching-tiger-hidden-dragon-1721412-1600-900.jpg);
+    }
+    .messy-tools {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://k12edubuzz.com/wp-content/uploads/2016/01/pile-of-tools.jpg);
+    }
+    .house-0 {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://i.ytimg.com/vi/p-nmfwQdkeM/maxresdefault.jpg);
+    }
+    .house-1 {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://madmovieman.com/wp-content/uploads/2016/02/House-Of-Flying-Daggers.jpg);
+    }
+    .house-2 {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://www.shuqi.org/asiancinema/pics/houseofflyingdaggers/house_of_flying_daggers34.jpg);
+    }
+    .house-3 {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/is9HfENK7bZo/v0/1200x-1.jpg);
+    }
+    .house-4 {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://www.shuqi.org/asiancinema/pics/houseofflyingdaggers/house_of_flying_daggers38.jpg);
+    }
+    .house-5 {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://hay.tv/upload/default/star/14032017/photo/final-battle.jpg);
+    }
+    .house-6 {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://www.mongrelmedia.com/MongrelMedia/files/ca/cad42707-9b12-4639-a2ff-61d53597288f.jpg);
+    }
+    .house-7 {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://www.shuqi.org/asiancinema/pics/houseofflyingdaggers/house_of_flying_daggers09.jpg);
+    }
+    .kata {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://s-media-cache-ak0.pinimg.com/736x/ee/4d/b2/ee4db2e19437fd0a5e0533c7ad88e988.jpg);
+    }
+    .nightmare {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://nerdist.com/wp-content/uploads/2015/08/freddy-krueger-wide-wallpapers-dekstop.jpg);
+    }
+    .plane {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://img1.etsystatic.com/170/0/10258152/il_fullxfull.1117087179_s4cw.jpg);
+    }
+    .electric-plane {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://images.ffx.co.uk/tools/Bosch_06032A4070_E.jpg?w=1280&h=960&scale=both);
+    }
+    .seven {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://2lin3i1bbign2l2t392v1pxd.wpengine.netdna-cdn.com/wp-content/uploads/2016/08/SevenSamuraiLead-1400x787.jpg);
+    }
+    .boys-from {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://ichef.bbci.co.uk/images/ic/1200x675/p01h62fk.jpg);
+    }
+    .boys-from-2 {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1.0)), url(https://ichef.bbci.co.uk/images/ic/1200x675/p01h62fk.jpg);
+    }
+    .finally {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://i1.wp.com/nyppagesix.files.wordpress.com/2016/02/leo-oscar.jpg?quality=90&strip=all&ssl=1);
+    }
+  </style>
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="deck.js/themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="deck.js/core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="deck.js/modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h1>Keep your tools sharp</h1>
+    </section>
+
+    <section class="slide"style="background-image:url(http://sharpefilm.net/gallery/image1/sharpe%27s_battle.jpg);background-size:cover">
+      <h1 class="contrast-text">Keep your tools sharp</h1>
+    </section>
+
+    <section class="slide" style="background-image:url(http://cartoon-characters.com/wp-content/uploads/2014/04/Beavis-Butthead.png);background-size:cover">
+      <h1 class="contrast-text">Double meaning!</h1>
+      <div class="notes">Sorry to disappoint the 14 year old boys trapped in men's bodies, but not that kind of double meaning...</div>
+    </section>
+
+    <section class="slide fade-bg-image pencils">
+      <h1>Who am I?</h1>
+    </section>
+
+    <section class="slide fade-bg-image pencils">
+      <h2>Glen Pike</h2>
+      <img class="" style="float: right" src="./images/smileyGoat.jpg"/>
+
+      <ul>
+        <li>Lead Developer at Swoop - <a href="http://weareswoop.com">weareswoop.com</a></li>
+        <li>Working for 17 years as a developer, 1 as a tester</li>
+        <li>Still enjoying JavaScript</li>
+      </ul>
+    </section>
+
+    <section class="slide fade-bg-image pencils">
+      <h2>See what I say</h2>
+      <ul>
+        <li>What "tools" are</li>
+        <li>Things to create them</li>
+        <li>My process</li>
+        <li>Benefits</li>
+        <li>Case Study</li>
+        <li>Further ideas</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h1>What is a tool?</h1>
+    </section>
+
+    <section class="slide"  style="background-image:url(http://res.cloudinary.com/thedailybeast/image/upload/v1492804968/galleries/2012/08/03/meme-of-the-week-boris-johnson-goes-ziplining/orig_cehgfw.png);background-size:cover">
+      <h1 class="contrast-text">What is a tool?</h1>
+    </section>
+
+    <section class="slide" style="background-image:url(https://consequenceofsound.files.wordpress.com/2015/06/screen-shot-2015-06-21-at-7-55-56-pm.png);background-size:cover">
+      <h1 class="contrast-text">What is a tool?</h1>
+    </section>
+
+    <section class="slide fade-bg-image tool-wall">
+      <h2>Definition</h2>
+      <h2><em>A device or implement, especially one held in the hand, used to carry out a particular function. ‘gardening tools’</em></h2>
+      <h2>1.1 A thing used to help perform a job.</h2>
+      <p><a href="https://en.oxforddictionaries.com/definition/tool">https://en.oxforddictionaries.com/definition/tool</a></p>
+      <div class="notes">I like the second definition, but I'd like to extend it:</div>
+    </section>
+
+    <section class="slide fade-bg-image tool-wall">
+      <h2>My Definition</h2>
+      <h2>A thing used to help automate a job you don't like doing manually.</h2>
+    </section>
+
+    <section class="slide fade-bg-image robotic_theatre">
+      <h1>Examples</h1>
+    </section>
+
+    <section class="slide fade-bg-image codemod">
+      <h2>Codemod</h2>
+      <p><em>Codemod is a tool/library to assist you with large-scale codebase refactors that can be partially automated but still require human oversight and occasional intervention.</em></p>
+      <p><a href="https://github.com/facebook/codemod">https://github.com/facebook/codemod</a></p>
+      <pre style="width: 120%;margin-left: -10%;font-size: 88%;">src/index.js:19
+
+      try {
+          await db.init(dbConfig);
+
+          app.listen(port, function() {
+              console.log(`Server started on port ${port}`);
+          })
+
+      } catch(e) {
+-         console.error('Caught error: ', e);
++         Log.error('Caught error: ', e);
+          process.exit();
+      }
+  }
+
+  main();
+~
+
+Accept change (y = yes [default], n = no, e = edit, A = yes to all, E = yes+edit)?</pre>
+    </section>
+
+    <section class="slide fade-bg-image monkey">
+      <h2>Chaos Monkey</h2>
+      <p><em>Chaos Monkey is a service which identifies groups of systems and randomly terminates one of the systems in a group. </em></p>
+      <p><a href="https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey">https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey</a></p>
+      <pre style="width: 120%;margin-left: -10%;font-size: 88%;">
+    /**
+     * Run. This is run on the schedule set by the MonkeyScheduler
+     */
+    public void run() {
+        if (ctx.calendar().isMonkeyTime(this)) {
+            LOGGER.info(this.type().name() + " Monkey Running ...");
+            try {
+                this.doMonkeyBusiness();
+            } finally {
+                String eventReport = context().getEventReport();
+                if (eventReport != null) {
+                    LOGGER.info("Reporting what I did...\n" + eventReport);
+                }
+            }
+        } else {
+            LOGGER.info("Not Time for " + this.type().name() + " Monkey");
+        }
+    }</pre>
+    </section>
+
+    <section class="slide fade-bg-image robotic_theatre">
+      <h2>Others</h2>
+      <ul style="float:left;width:60%">
+        <li>Clean up a database because of a weird bug in the code.</li>
+        <li>Changing my environment from one state to another.</li>
+        <li>Sync local DB / images with Wordpress remote</li>
+        <li>Deploy audio and images to multiple machines</li>
+        <li>Generating data for animation sequences based on other animations</li>
+        <li>Remove need to be sudo for installing node packages globally</li>
+      </ul>
+      <img style="float:right;width: 30%" src="images/robotic-theatre.jpg"/>
+    </section>
+
+    <section class="slide fade-bg-image typing">
+      <h1>How you might create them</h1>
+    </section>
+
+    <section class="slide fade-bg-image typing">
+      <h2>Approaches</h2>
+      <ul>
+        <li>Shell alias</li>
+        <li>Shell script</li>
+        <li>Programming language script</li>
+        <li>Makefile</li>
+        <li>Combination of the above</li>
+      </ul>
+      <div class="notes">Not exclusive - some tools combine languages - see later.</div>
+    </section>
+
+    <section class="slide fade-bg-image typing">
+      <h2>Approaches</h2>
+      <ul>
+        <li>Challenge to learn new technique or language</li>
+        <li>Test existing knowledge - without looking at doc's</li>
+        <li>Speed - timebox / set a deadline</li>
+      </ul>
+    </section>
+
+    <section class="slide fade-bg-image house-0">
+      <h1>Possible Process</h1>
+    </section>
+
+    <section class="slide fade-bg-image house-1">
+      <h1>Define the problem</h1>
+    </section>
+
+    <section class="slide fade-bg-image house-1">
+      <h2>What is the one thing you're trying to do?</h2>
+      <ul>
+        <li>Reduce RSI?</li>
+        <li>Error prone operation?</li>
+        <li>Slow operation - run in background?</li>
+        <li>Creating, finding, updating removing data?</li>
+      </ul>
+    </section>
+
+    <section class="slide fade-bg-image house-4">
+      <h2>Has it been solved already?</h2>
+      <ul>
+        <li>Search for existing solutions</li>
+        <li>Can you build it with something you have?</li>
+        <li>Know your toolbox</li>
+      </ul>
+      <div class="notes">Balance between finding a solution and writing one -it's okay to reinvent the wheel</div>
+    </section>
+
+    <section class="slide fade-bg-image house-3">
+      <h2>Break it down</h2>
+      <ul>
+        <li>Write out the steps</li>
+        <li>Stub out with debug, etc.</li>
+        <li>Sort out your inputs</li>
+        <li>Split into digestible chunks</li>
+      </ul>
+      <div class="notes">This is ideal scenario - similar to how you code, but here you don't have to be formal with design, etc.</div>
+    </section>
+
+    <section class="slide fade-bg-image house-2">
+      <h2>Flesh it out</h2>
+      <ul>
+        <li>Outside in - start and end first?</li>
+        <li>Fill in some gaps.</li>
+        <li>Stub / dummy the dangerous stuff until everything else works</li>
+        <li>Output a lot of information</li>
+        <li>Get it working for one scenario</li>
+      </ul>
+      <div class="notes">Start and end lets me know my setup and output is working</div>
+    </section>
+
+    <section class="slide fade-bg-image house-5">
+      <h2>Tidy up</h2>
+      <ul>
+        <li>Error handling / other scenarios</li>
+        <li>Add / subtract / refactor code for repetition</li>
+        <li>Clean up output - sensible level</li>
+        <li>Test, test, test on non-production system</li>
+        <li>Uninstall / fresh install and test again</li>
+      </ul>
+      <div class="notes">Tidy up may be minimal if only you are using it, but always worth the effort</div>
+    </section>
+
+    <section class="slide fade-bg-image house-7">
+      <h1>Is it done?</h1>
+    </section>
+
+    <section class="slide fade-bg-image house-7">
+      <h2>When to stop</h2>
+      <ul>
+        <li>Solves your problem</li>
+        <li>Just good enough</li>
+        <li>Why?  It's rough and ready code</li>
+        <li>Learning will inform your next tool / other work</li>
+        <li>You did test it though right?</li>
+      </ul>
+      <div class="notes">We joke about the 80/80 rule right!</div>
+    </section>
+
+    <section class="slide fade-bg-image house-6">
+      <h1>Testing</h1>
+    </section>
+
+    <section class="slide fade-bg-image house-6">
+      <h2>Testing</h2>
+      <ul>
+        <li>Locally / non-essential scenario</li>
+        <li>Testing appropriate to tool</li><!-- Rough and ready, but a blunt chisel is dangerous-->
+        <li>Can be manual, but should be repeatable</li>
+        <li>Check your variable values are "sane" for "production"</li>
+        <li>Get someone else to use it (if they have a need).</li>
+      </ul>
+      <div class="notes">Don't assume because one bit works, it all does!</div>
+    </section>
+
+    <section class="slide">
+      <h1>Illustration</h1>
+    </section>
+
+    <section class="slide fade-bg-image duct-tape">
+      <h2>The Problem</h2>
+      <img src="images/roof.jpg"/>
+      <div class="notes">Hard to reach areas.  Fragile roof</div>
+    </section>
+
+    <section class="slide fade-bg-image duct-tape">
+      <h2>Search for solutions</h2>
+      <img src="images/toolbox.jpg"/>
+      <div class="notes">Can you see anything useful in this picture?  Know your toolbox (this one is messy!)</div>
+    </section>
+
+    <section class="slide fade-bg-image duct-tape">
+      <h2>Off the shelf parts</h2>
+      <img src="images/nimbus-parts.jpg"/>
+    </section>
+
+    <section class="slide fade-bg-image duct-tape">
+      <h2>The Nimbus 3000</h2>
+      <img src="images/nimbus-1.jpg"/>
+      <div class="notes">What is the most important thing in this picture?</div>
+    </section>
+
+    <section class="slide fade-bg-image duct-tape">
+      <h1>Duct Tape!</h1>
+      <div class="notes">Your language of choice is the duct tape</div>
+    </section>
+
+    <!--<section class="slide fade-bg-image duct-tape">
+      <h2>Duct Tape!</h2>
+      <img src="images/shuetsu9.jpg">
+      <div class="notes">Get good enough with your duct-tape and you can write other languages with it like Mr Shuetsu</div>
+    </section>-->
+
+    <section class="slide fade-bg-image robothespian">
+      <h1>Case Study: Robotic Theatre</h1>
+      <div class="notes"></div>
+    </section>
+
+    <section class="slide fade-bg-image robothespian">
+      <h2>Robotic Theatre Animations</h2>
+      <ul>
+        <li>3 animated robots + 3 lights + one sound source</li>
+        <li>Animated via Blender 3D</li>
+        <li>Animations broken into shorter chunks ~5m</li>
+        <li>Some animations finished before others</li>
+        <li>Need to trigger animations on each thing in sync from a master</li>
+        <li>Making "master" animation was tedious and error prone</li>
+      </ul>
+    </section>
+
+    <section class="slide fade-bg-image robothespian">
+      <h2>Robotic Theatre Breakdown</h2>
+      <ul>
+        <li>Animations stored as SQL data</li>
+        <li>Each chunk is determinate length</li>
+        <li>Get animation lengths from each source</li>
+        <li>Use longest one to keep them all in sync</li>
+        <li>Create a "play" event with correct time</li>
+        <li>Repeat for each chunk on each robot, etc.</li>
+      </ul>
+      <div class="notes">Give walkthrough of script</div>
+    </section>
+
+    <section class="slide fade-bg-image robothespian">
+      <h1>Robotic Theatre Script</h1>
+    </section>
+
+    <section class="slide fade-bg-image kata">
+      <h1>Is it successful?</h1>
+    </section>
+
+    <section class="slide fade-bg-image kata">
+      <h2>Is it successful?</h2>
+      <ul>
+        <li>You will know if it works</li>
+        <li>Don't be afraid to tell others</li>
+        <li>Or learn from it</li>
+      </ul>
+      <div class="notes">
+        Master sequence maker was used every day for aprox 8 weeks, then regularly afterwards.
+        Making the sequences manually took about 20 minutes for first setup, then 5 minutes tweaking if the animations were changed
+        (~4 times / day) then recording time - about 5-10 mins.  Moving markers in Blender to trigger animations was not easy / accurate.
+        Script took about 2 days to write - 16 hours: paid for itself in 2 weeks.
+      </div>
+    </section>
+
+    <section class="slide fade-bg-image nightmare">
+      <h1>Maintenance</h1>
+    </section>
+
+    <section class="slide fade-bg-image nightmare">
+      <h2>Maintenance</h2>
+      <ul>
+        <li>Can be expensive vs cost of problem</li>
+        <li>Instead of refactor, can write a 2nd tool</li>
+        <li>3rd time - is becoming software...</li>
+      </ul>
+      <div class="notes">Can be quicker for small tools, but as tools grow, refactor is important</div>
+    </section>
+
+    <section class="slide fade-bg-image messy-tools">
+      <h1>Sharing good tools</h1>
+    </section>
+
+    <section class="slide fade-bg-image messy-tools">
+      <h2>Sharing good tools</h2>
+      <ul>
+        <li>Naming is important</li>
+        <li>Do one thing well</li>
+        <li>Robust</li>
+        <li>Documentation if needed</li>
+      </ul>
+      <div class="notes">We had a script called "daddyshark" vs "master_sequence_maker"</div>
+    </section>
+
+    <section class="slide fade-bg-image plane">
+      <h1>Example</h1>
+    </section>
+
+    <section class="slide fade-bg-image plane">
+      <h2>npm-g_nosudo</h2>
+      <ul>
+        <li>Running `npm install -g` requires 'sudo'</li>
+        <li>Scripted existing guide</li>
+        <li>Useful internally</li>
+        <li>Released to github</li>
+        <li><a href="https://github.com/glenpike/npm-g_nosudo">https://github.com/glenpike/npm-g_nosudo</a></li>
+      </ul>
+    </section>
+
+    <section class="slide fade-bg-image electric-plane">
+      <h2>Requires support</h2>
+      <ul>
+        <li>Cross platform issues</li>
+        <li>OS idiosyncracies</li>
+        <li>Generally well accepted</li>
+        <li>Superceded by other tools?</li>
+      </ul>
+      <div class="notes">Shell fun - generally down to different default shell, need to consider alternatives.  Time to support!</div>
+    </section>
+
+    <section class="slide fade-bg-image seven">
+      <h1>Benefits</h1>
+    </section>
+
+    <section class="slide fade-bg-image seven">
+      <h2>Good tools pay for themselves</h2>
+      <ul>
+        <li>Time saving</li>
+        <li>Less errors</li>
+        <li>Can snowball into a bigger idea</li>
+        <li>Can justify time-spent to bosses with proof</li>
+      </ul>
+      <div class="notes">Robot script - 16 hours vs 40+</div>
+    </section>
+
+    <section class="slide fade-bg-image seven">
+      <h2>Biggest Benefit</h2>
+      <ul>
+        <li>Experiment and learn</li>
+        <li>New languages</li>
+        <li>Deeper understanding</li>
+        <li>Self improvement</li>
+        <li>Opens your mind</li>
+        <li>Lower stress (Unless Live DB involved!)</li>
+      </ul>
+    </section>
+
+    <section class="slide"  style="background-image:url(http://cartoon-characters.com/wp-content/uploads/2014/04/Beavis-Butthead.png);background-size:cover">
+      <h1 class="contrast-text">Double meaning!</h1>
+    </section>
+
+    <section class="slide" style="background-image:url(https://s-media-cache-ak0.pinimg.com/originals/4a/e2/c2/4ae2c293d01e6e366d55f20d66490320.jpg);background-size:cover">
+      <h1 class="contrast-text">You are the tools!</h1>
+      <div class="notes">
+        Heh Heh Beavis
+        You are sharpening your own skills by doing this.
+        Think of it as "playtime" - we learn best through play
+      </div>
+    </section>
+
+    <section class="slide fade-bg-image crouching">
+      <h2>Ideas for tools</h2>
+      <ul>
+        <li>Deployment / updating systems</li>
+        <li>Scraping / getting information</li>
+        <li>Transforming data</li>
+        <li>Monitoring something</li>
+      </ul>
+    </section>
+
+    <section class="slide fade-bg-image crouching">
+      <h1>Summary</h1>
+    </section>
+
+    <section class="slide fade-bg-image crouching">
+      <h2>Summary</h2>
+      <ul>
+        <li>What "tools" are</li>
+        <li>How you might create them</li>
+        <li>My process</li>
+        <li>Benefits</li>
+        <li>Keeping yourself sharp</li>
+        <li>Further ideas</li>
+      </ul>
+    </section>
+
+
+    <section class="slide fade-bg-image finally">
+      <h1>Finally</h1>
+    </section>
+
+    <section class="slide fade-bg-image finally">
+      <h2>Finally</h2>
+      <ul>
+        <li>I love writing tools</li>
+        <li>Freedom to develop</li>
+        <li>Focus and hack</li>
+        <li>Small, easy to copy / combine</li>
+        <li>Go and write your own</li>
+      </ul>
+      <div class="notes">Stick tools in your bin dir and go. Some evolve.
+        Others were used as basis for "proper" stuff (a bit like my software :) )
+      </div>
+    </section>
+
+    <section class="slide fade-bg-image boys-from">
+      <h1>Thank you</h1>
+    </section>
+
+    <section class="slide fade-bg-image boys-from-2">
+      <h2>Swoop are hiring</h2>
+      <ul style="float:left;width:40%">
+        <li>JavaScript developer</li>
+        <li>Front &amp; Back-end</li>
+        <li>Small but lively team</li>
+        <li>Flexible working</li>
+      </ul>
+      <img style="float:right;width:40%" src="images/swoop_logo_vertical.png"
+    </section>
+
+    <!--
+    <section class="slide">
+      <h2></h2>
+      <ul>
+        <li></li>
+        <li><a href=""></a></li>
+      </ul>
+      <p><a href="http://qunitjs.com/">qunitjs.com</a><img style="float:right" src="http://qunitjs.com/jquery-wp-content/themes/jquery/images/logo-qunit.png"/></p>
+      <img src="./presentation/tabs-test.png"/>
+    </section>
+    -->
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="deck.js/jquery.min.js"></script>
+<script src="deck.js/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/scale/deck.scale.js"></script>
+<script src="deck.ext.js/extensions/clone/deck.clone.js"></script>
+<script src="deck.ext.js/extensions/notes/deck.notes.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
